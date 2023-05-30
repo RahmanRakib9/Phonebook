@@ -13,11 +13,11 @@ int main(void)
     // display welcome message and team members name
     cout << "-------------------------------------------------------\n";
     cout << "WELCOME TO OUR PHONEBOOK PROJECT\n";
-    cout << "TEAM: TRIANGLE\n\n";
-    cout << "\tTEAM MEMBER'S:\n";
+    cout << "TEAM: \n\n";
+    cout << "\tTEAM MEMBERSE:\n";
     cout << "Rakibur Rahman Rakib (222-15-6191)\n";
     cout << "Abdur Radi (222-15-6393)\n";
-    cout << "Angur Saha (222-15-6182)\n";
+    cout << "Angur Saha (222-15-6191)\n";
     cout << "---------------------------------------------------------\n\n\n\n\n\n\n";
 
     vector<Contact> phonebook; // vector for store the user name and contact number
@@ -27,9 +27,9 @@ int main(void)
         cout << "-------------------------------------------------------\n";
         cout << "Press 1 for Add Contact\n";
         cout << "Press 2 for Display All Contacts\n";
-        cout << "Press 3 for Search  Contact\n";
-        cout << "Press 4 for Edit Contact\n";
-        cout << "Press 5 for Delete Contact\n";
+        cout << "Press 3 for Search a Contact\n";
+        cout << "Press 4 for Edit a Contact\n";
+        cout << "Press 5 for Delete a Contact\n";
         cout << "Press 6 for Exit\n";
         cin >> choice;
 
@@ -63,18 +63,18 @@ int main(void)
             cin >> searchQuery;
 
             bool found = false;
+            // implement linear search for find the user info
             for (const auto &contact : phonebook)
             {
                 if (contact.name == searchQuery)
                 {
-                    cout << "-------------------------------------------------------\n";
                     cout << "Contact found!\n";
                     cout << "Name: " << contact.name << ", Phone Number: " << contact.phoneNumber << "\n";
                     found = true;
                 }
             }
 
-            // if contact is not exist
+            // if contact is not found
             if (!found)
             {
                 cout << "Contact not found.\n";
@@ -84,7 +84,7 @@ int main(void)
         }
         case 4:
         {
-            cout << "Enter The Name of the contact to edit: ";
+            cout << "Enter the name or phone number of the contact to edit: ";
             string editQuery;
             cin >> editQuery;
 
@@ -98,23 +98,21 @@ int main(void)
                     cout << "Enter the new phone number: ";
                     cin >> contact.phoneNumber;
                     edited = true;
-                    cout << "-------------------------------------------------------\n";
-                    cout << "Contact Edited Successfully!\n";
+                    cout << "Contact edited successfully!\n";
                     break;
                 }
             }
 
-            // if contact is not exist
             if (!edited)
             {
-                std::cout << "Contact Not Found.\n";
+                std::cout << "Contact not found.\n";
             }
 
             break;
         }
         case 5:
         {
-            cout << "Enter The Name of the Contact to Delete: ";
+            cout << "Enter The Name or phone number of the contact to delete: ";
             string deleteQuery;
             cin >> deleteQuery;
 
@@ -125,16 +123,14 @@ int main(void)
                 {
                     phonebook.erase(it);
                     deleted = true;
-                    cout << "-------------------------------------------------------\n";
-                    cout << "Contact Deleted Successfully!\n";
+                    cout << "Contact deleted successfully!\n";
                     break;
                 }
             }
 
-            // if contact is not exist
             if (!deleted)
             {
-                cout << "Contact Not Found.\n";
+                cout << "Contact not found.\n";
             }
 
             break;
@@ -149,6 +145,4 @@ int main(void)
         }
 
     } while (choice != 6);
-
-    return 0;
 }

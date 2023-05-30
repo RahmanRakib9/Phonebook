@@ -84,7 +84,7 @@ int main(void)
         }
         case 4:
         {
-            cout << "Enter The Name of the contact to edit: ";
+            cout << "Enter the name or phone number of the contact to edit: ";
             string editQuery;
             cin >> editQuery;
 
@@ -99,7 +99,7 @@ int main(void)
                     cin >> contact.phoneNumber;
                     edited = true;
                     cout << "-------------------------------------------------------\n";
-                    cout << "Contact Edited Successfully!\n";
+                    cout << "Contact edited successfully!\n";
                     break;
                 }
             }
@@ -107,14 +107,14 @@ int main(void)
             // if contact is not exist
             if (!edited)
             {
-                std::cout << "Contact Not Found.\n";
+                std::cout << "Contact not found.\n";
             }
 
             break;
         }
         case 5:
         {
-            cout << "Enter The Name of the Contact to Delete: ";
+            cout << "Enter The Name or phone number of the contact to delete: ";
             string deleteQuery;
             cin >> deleteQuery;
 
@@ -126,7 +126,7 @@ int main(void)
                     phonebook.erase(it);
                     deleted = true;
                     cout << "-------------------------------------------------------\n";
-                    cout << "Contact Deleted Successfully!\n";
+                    cout << "Contact deleted successfully!\n";
                     break;
                 }
             }
@@ -134,7 +134,7 @@ int main(void)
             // if contact is not exist
             if (!deleted)
             {
-                cout << "Contact Not Found.\n";
+                cout << "Contact not found.\n";
             }
 
             break;

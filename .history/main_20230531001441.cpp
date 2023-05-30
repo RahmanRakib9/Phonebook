@@ -126,7 +126,7 @@ int main(void)
                     phonebook.erase(it);
                     deleted = true;
                     cout << "-------------------------------------------------------\n";
-                    cout << "Contact Deleted Successfully!\n";
+                    cout << "Contact deleted successfully!\n";
                     break;
                 }
             }
@@ -134,7 +134,7 @@ int main(void)
             // if contact is not exist
             if (!deleted)
             {
-                cout << "Contact Not Found.\n";
+                cout << "Contact not found.\n";
             }
 
             break;

@@ -134,7 +134,7 @@ int main(void)
             // if contact is not exist
             if (!deleted)
             {
-                cout << "Contact Not Found.\n";
+                cout << "Contact not found.\n";
             }
 
             break;
