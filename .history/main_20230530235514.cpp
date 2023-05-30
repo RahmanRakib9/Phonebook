@@ -96,9 +96,9 @@ int main(void)
                     cout << "Enter the new name: ";
                     cin >> contact.name;
                     cout << "Enter the new phone number: ";
-                    cin >> contact.phoneNumber;
+                    std::cin >> contact.phoneNumber;
                     edited = true;
-                    cout << "Contact edited successfully!\n";
+                    std::cout << "Contact edited successfully!\n";
                     break;
                 }
             }

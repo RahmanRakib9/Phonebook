@@ -87,28 +87,6 @@ int main(void)
             cout << "Enter the name or phone number of the contact to edit: ";
             string editQuery;
             cin >> editQuery;
-
-            bool edited = false;
-            for (auto &contact : phonebook)
-            {
-                if (contact.name == editQuery)
-                {
-                    cout << "Enter the new name: ";
-                    cin >> contact.name;
-                    cout << "Enter the new phone number: ";
-                    cin >> contact.phoneNumber;
-                    edited = true;
-                    cout << "Contact edited successfully!\n";
-                    break;
-                }
-            }
-
-            if (!edited)
-            {
-                std::cout << "Contact not found.\n";
-            }
-
-            break;
         }
         case 5:
         {

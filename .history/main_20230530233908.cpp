@@ -11,14 +11,13 @@ struct Contact
 int main(void)
 {
     // display welcome message and team members name
-    cout << "-------------------------------------------------------\n";
-    cout << "WELCOME TO OUR PHONEBOOK PROJECT\n";
-    cout << "TEAM: DemoTeamName\n\n";
-    cout << "\tTEAM MEMBERSE:\n";
+    cout << "welcome to our phonebook project\n\n";
+    cout << "Team DemoTeamName\n";
+    cout << "Team Members:\n";
     cout << "Rakibur Rahman Rakib (222-15-6191)\n";
     cout << "Abdur Radi (222-15-6191)\n";
-    cout << "Angur Saha (222-15-6191)\n";
-    cout << "---------------------------------------------------------\n\n\n\n\n\n\n";
+    cout << "Angur Saha (222-15-6191)\n\n\n\n\n";
+    cout << "---------------------------------------------------------\n";
 
     vector<Contact> phonebook; // vector for store the user name and contact number
     int choice;
@@ -28,9 +27,8 @@ int main(void)
         cout << "Press 1 for Add Contact\n";
         cout << "Press 2 for Display All Contacts\n";
         cout << "Press 3 for Search a Contact\n";
-        cout << "Press 4 for Edit a Contact\n";
-        cout << "Press 5 for Delete a Contact\n";
-        cout << "Press 6 for Exit\n";
+        cout << "Press 4 for Delete a Contact\n";
+        cout << "Press 5 for Exit\n";
         cin >> choice;
 
         switch (choice)
@@ -79,70 +77,22 @@ int main(void)
             {
                 cout << "Contact not found.\n";
             }
-
-            break;
+            
         }
         case 4:
         {
-            cout << "Enter the name or phone number of the contact to edit: ";
-            string editQuery;
-            cin >> editQuery;
-
-            bool edited = false;
-            for (auto &contact : phonebook)
-            {
-                if (contact.name == editQuery)
-                {
-                    cout << "Enter the new name: ";
-                    cin >> contact.name;
-                    cout << "Enter the new phone number: ";
-                    cin >> contact.phoneNumber;
-                    edited = true;
-                    cout << "Contact edited successfully!\n";
-                    break;
-                }
-            }
-
-            if (!edited)
-            {
-                std::cout << "Contact not found.\n";
-            }
-
-            break;
-        }
-        case 5:
-        {
-            cout << "Enter The Name or phone number of the contact to delete: ";
+            cout << "Enter the name or phone number of the contact to delete: ";
             string deleteQuery;
             cin >> deleteQuery;
-
-            bool deleted = false;
-            for (auto it = phonebook.begin(); it != phonebook.end(); ++it)
-            {
-                if (it->name == deleteQuery)
-                {
-                    phonebook.erase(it);
-                    deleted = true;
-                    cout << "Contact deleted successfully!\n";
-                    break;
-                }
-            }
-
-            if (!deleted)
-            {
-                cout << "Contact not found.\n";
-            }
-
-            break;
         }
 
-        case 6:
-            cout << "Exiting...\n";
+        case 5:
+            std::cout << "Exiting...\n";
             break;
         default:
-            cout << "Invalid choice. Please try again.\n";
+            std::cout << "Invalid choice. Please try again.\n";
             break;
         }
 
-    } while (choice != 6);
+    } while (choice != 3);
 }

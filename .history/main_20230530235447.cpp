@@ -93,12 +93,12 @@ int main(void)
             {
                 if (contact.name == editQuery)
                 {
-                    cout << "Enter the new name: ";
-                    cin >> contact.name;
-                    cout << "Enter the new phone number: ";
-                    cin >> contact.phoneNumber;
+                    std::cout << "Enter the new name: ";
+                    std::cin >> contact.name;
+                    std::cout << "Enter the new phone number: ";
+                    std::cin >> contact.phoneNumber;
                     edited = true;
-                    cout << "Contact edited successfully!\n";
+                    std::cout << "Contact edited successfully!\n";
                     break;
                 }
             }
