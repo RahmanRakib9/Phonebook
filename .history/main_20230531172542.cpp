@@ -5,7 +5,7 @@ using namespace std;
 struct Contact
 {
     string name;
-    string phoneNumber;
+    stri phoneNumber;
 };
 
 int main(void)
